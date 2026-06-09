@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docker Containerization</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        padding:20px;
+    }
+
+    .container{
+        max-width:900px;
+        margin:auto;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    .section{
+        margin-top:20px;
+        padding:15px;
+        border-left:5px solid #2496ED;
+        background:#f9f9f9;
+    }
+
+    pre{
+        background:#272822;
+        color:#fff;
+        padding:10px;
+        border-radius:5px;
+        overflow-x:auto;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Docker Containerization Demo</h1>
+
+    <div class="section">
+        <h3>Dockerfile</h3>
+        <pre>
+FROM nginx:latest
+COPY . /usr/share/nginx/html
+EXPOSE 80
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Build Docker Image</h3>
+        <pre>
+docker build -t my-web-app .
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Run Docker Container</h3>
+        <pre>
+docker run -d -p 8080:80 my-web-app
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Status</h3>
+        <p>Application successfully containerized using Docker.</p>
+    </div>
+</div>
+
+</body>
+</html>

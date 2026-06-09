@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redis Caching Demo</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .container{
+        width:500px;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        text-align:center;
+    }
+
+    button{
+        padding:10px 20px;
+        background:#007bff;
+        color:white;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#0056b3;
+    }
+
+    #result{
+        margin-top:20px;
+        padding:15px;
+        background:#f8f9fa;
+        border-radius:5px;
+        border:1px solid #ddd;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Redis Caching Demo</h2>
+
+    <button onclick="fetchData()">Fetch Data</button>
+
+    <div id="result">
+        Click the button to load data.
+    </div>
+</div>
+
+<script>
+let cache = {};
+
+function fetchData() {
+
+    const result = document.getElementById("result");
+
+    if(cache.data){
+        result.innerHTML =
+            "<b>Data Source:</b> Cache<br>" +
+            cache.data;
+        return;
+    }
+
+    result.innerHTML = "Fetching data from server...";
+
+    setTimeout(() => {
+
+        const serverData =
+            "User data loaded successfully.";
+
+        cache.data = serverData;
+
+        result.innerHTML =
+            "<b>Data Source:</b> Server<br>" +
+            serverData;
+
+    }, 2000);
+}
+</script>
+
+</body>
+</html>

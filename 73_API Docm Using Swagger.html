@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swagger API Documentation</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        margin:0;
+        padding:20px;
+    }
+
+    .container{
+        max-width:900px;
+        margin:auto;
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    .api-card{
+        border:1px solid #ddd;
+        border-radius:8px;
+        margin:15px 0;
+        padding:15px;
+    }
+
+    .get{
+        border-left:5px solid green;
+    }
+
+    .post{
+        border-left:5px solid blue;
+    }
+
+    .delete{
+        border-left:5px solid red;
+    }
+
+    code{
+        background:#f1f1f1;
+        padding:2px 5px;
+        border-radius:4px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Swagger API Documentation</h1>
+
+    <div class="api-card get">
+        <h3>GET /api/users</h3>
+        <p>Retrieve all users.</p>
+        <p><strong>Response:</strong></p>
+        <code>
+        [
+          {
+            "id": 1,
+            "name": "John"
+          }
+        ]
+        </code>
+    </div>
+
+    <div class="api-card post">
+        <h3>POST /api/users</h3>
+        <p>Create a new user.</p>
+        <p><strong>Request Body:</strong></p>
+        <code>
+        {
+          "name": "John"
+        }
+        </code>
+    </div>
+
+    <div class="api-card delete">
+        <h3>DELETE /api/users/{id}</h3>
+        <p>Delete a user by ID.</p>
+    </div>
+</div>
+
+</body>
+</html>

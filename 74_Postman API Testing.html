@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Postman API Testing</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        margin:0;
+        padding:20px;
+    }
+
+    .container{
+        max-width:900px;
+        margin:auto;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    .card{
+        border:1px solid #ddd;
+        border-radius:8px;
+        padding:15px;
+        margin-top:15px;
+    }
+
+    .method{
+        font-weight:bold;
+        color:#007bff;
+    }
+
+    code{
+        display:block;
+        background:#f8f9fa;
+        padding:10px;
+        border-radius:5px;
+        margin-top:10px;
+        overflow-x:auto;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Postman API Testing Demo</h1>
+
+    <div class="card">
+        <p class="method">GET Request</p>
+        <p>Fetch all users from API.</p>
+        <code>
+GET https://jsonplaceholder.typicode.com/users
+        </code>
+    </div>
+
+    <div class="card">
+        <p class="method">POST Request</p>
+        <p>Create a new user.</p>
+        <code>
+POST https://jsonplaceholder.typicode.com/users
+
+{
+  "name": "John Doe",
+  "email": "john@example.com"
+}
+        </code>
+    </div>
+
+    <div class="card">
+        <p class="method">PUT Request</p>
+        <p>Update user information.</p>
+        <code>
+PUT https://jsonplaceholder.typicode.com/users/1
+        </code>
+    </div>
+
+    <div class="card">
+        <p class="method">DELETE Request</p>
+        <p>Delete a user.</p>
+        <code>
+DELETE https://jsonplaceholder.typicode.com/users/1
+        </code>
+    </div>
+</div>
+
+</body>
+</html>

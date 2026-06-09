@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration Testing Demo</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        padding:20px;
+    }
+
+    .container{
+        max-width:800px;
+        margin:auto;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        text-align:center;
+    }
+
+    .pass{
+        color:green;
+        font-weight:bold;
+        margin:10px 0;
+    }
+
+    .fail{
+        color:red;
+        font-weight:bold;
+        margin:10px 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Integration Testing Demo</h1>
+    <div id="results"></div>
+</div>
+
+<script>
+// Module 1 - User Service
+function getUser() {
+    return {
+        id: 1,
+        name: "Varshini"
+    };
+}
+
+// Module 2 - Order Service
+function getOrders(userId) {
+    return [
+        { orderId: 101, userId: 1 },
+        { orderId: 102, userId: 1 }
+    ];
+}
+
+// Integration Test
+function runIntegrationTest() {
+
+    const results = document.getElementById("results");
+
+    const user = getUser();
+    const orders = getOrders(user.id);
+
+    const testResult = document.createElement("p");
+
+    if(user.id === orders[0].userId) {
+        testResult.className = "pass";
+        testResult.textContent =
+            "PASS: User Service successfully integrated with Order Service";
+    } else {
+        testResult.className = "fail";
+        testResult.textContent =
+            "FAIL: Integration test failed";
+    }
+
+    results.appendChild(testResult);
+}
+
+runIntegrationTest();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deploy Application on VPS</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#007bff;
+}
+
+.section{
+    margin:20px 0;
+    padding:15px;
+    background:#f8f9fa;
+    border-left:5px solid #007bff;
+}
+
+pre{
+    background:#272822;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    overflow-x:auto;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Deploy Application on VPS</h1>
+
+    <div class="section">
+        <h3>Step 1: Connect to VPS</h3>
+        <pre>
+ssh username@your-server-ip
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Step 2: Update Server</h3>
+        <pre>
+sudo apt update
+sudo apt upgrade -y
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Step 3: Install Node.js</h3>
+        <pre>
+sudo apt install nodejs npm -y
+node -v
+npm -v
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Step 4: Upload Project</h3>
+        <pre>
+git clone https://github.com/username/project.git
+cd project
+npm install
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Step 5: Start Application</h3>
+        <pre>
+npm start
+        </pre>
+    </div>
+
+    <div class="section">
+        <h3>Deployment Status</h3>
+        <p>✓ Application Successfully Deployed on VPS</p>
+    </div>
+
+</div>
+
+</body>
+</html>
